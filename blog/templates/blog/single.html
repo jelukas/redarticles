@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% load i18n inplace_edit %}
+{% block 'content' %}
+	<article>
+		<header><h2>{{ article.title }}</h2></header>
+		<section class="contenido">
+			{% inplace_edit "article.content|safe" adaptor="myadaptor" %}
+		</section>
+	</article>
+{% endblock %}

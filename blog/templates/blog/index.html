@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% load i18n inplace_edit %}
+{% block 'content' %}
+	{% for article in articles %}
+	<article>
+		<header><h2><a href="{% url 'single' article.id %}">
+			{% inplace_edit "article.title" %}</a></h2></header>
+		<section class="contenido" style="width:800px;">
+			{% inplace_edit "article.content|safe" adaptor="myadaptor" %}
+		</section>
+	</article>
+	{% endfor %}
+{% endblock %}
